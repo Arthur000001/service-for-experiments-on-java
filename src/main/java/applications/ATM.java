@@ -3,7 +3,7 @@ package main.java.applications;
 import java.util.Scanner;
 
 public class ATM {
-    private static String currentPin = "1234";
+    private static String currentPin = "1";
     private static int balance = 10000;
 
     public static void main(String[] args) {
@@ -17,13 +17,15 @@ public class ATM {
             boolean sessionActive = true;
 
             while (sessionActive) {
-                System.out.println("\nВыберите действие:");
-                System.out.println("1. Проверить баланс");
-                System.out.println("2. Снять деньги");
-                System.out.println("3. Внести деньги");
-                System.out.println("4. Выйти");
-                System.out.println("5. Сменить PIN");
-                System.out.print("Ваш выбор: ");
+                System.out.print("\n" +
+                        "Выберите действие: \n" +
+                        "1. Проверить баланс \n" +
+                        "2. Снять деньги \n" +
+                        "3. Внести деньги \n" +
+                        "4. Выйти \n" +
+                        "5. Сменить PIN \n" +
+                        "Ваш выбор: "
+                );
                 String choice = scanner.nextLine();
 
                 switch (choice) {
@@ -56,14 +58,14 @@ public class ATM {
                         }
                         break;
                     case "4":
-                        System.out.print("Вы точно хотите выйти? (да'д'/нет'н'): ");
+                        System.out.print("Вы точно хотите выйти? (да'1'/нет'0'): ");
                         String confirmExit = scanner.nextLine().trim().toLowerCase();
-                        if (confirmExit.equals("д")) {
+                        if (confirmExit.equals("1")) {
                             sessionActive = false;
 
-                            System.out.print("Хотите воспользоваться приложением заново? (да/нет): ");
+                            System.out.print("Хотите воспользоваться приложением заново? (да'1'/нет'0'): ");
                             String restart = scanner.nextLine().trim().toLowerCase();
-                            if (!restart.equals("д")) {
+                            if (!restart.equals("1")) {
                                 System.out.println("Спасибо! До свидания.");
                                 return;
                             }
